@@ -1,0 +1,6 @@
+studentpercentage <-read.csv("https://raw.githubusercontent.com/AdiPersonalWorks/Random/master/student_scores%20-%20student_scores.csv")
+predictmarks=lm(Scores~Hours,data=studentpercentage)
+summary(predictmarks)
+predict(predictmarks,newdata=data.frame(Hours=9.25))
+plot(studentpercentage[c(1,2)],col="red")
+abline(predictmarks,col="purple")
